@@ -11,7 +11,7 @@ services:
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
     environment:
       - username=${username}
-      - apikey=${passowrd}
+      - apikey=${apikey}
       - region=${region}
       - as=${as}
       - ip41=${ip41}
