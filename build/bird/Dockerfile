@@ -10,7 +10,7 @@ ENV bgppassword=${bgppassword}
 RUN apt-get update;apt-get -y dist-upgrade; rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
-RUN apt-get update;apt-get -y install bird bird-bgp; \ mkdir -p /run/bird
+RUN apt-get update;apt-get -y install bird bird-bgp; \ mkdir -p /run/bird; \
 	rm -rf /var/lib/apt/lists/*
 
 CMD /start.sh
