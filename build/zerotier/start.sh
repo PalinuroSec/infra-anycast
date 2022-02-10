@@ -1,5 +1,5 @@
-ip4=${ip4}
-ip6=${ip6}
+ip4=${ip4[@]}
+ip6=${ip6[@]}
 gw4=${gw4}
 gw6=${gw6}
 
@@ -7,7 +7,7 @@ dn="dummy0"
 
 sleep .5
 
-modprobe dummy
+modprobe dummy || true
 
 ip link set $dn down &> /dev/null
 ip link del dev $dn type dummy &> /dev/null
