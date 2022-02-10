@@ -5,8 +5,8 @@ services:
     build: ./build/zerotier/
     restart: unless-stopped
     volumes:
-      - ./config/connect2anycast.sh:/connect2anycast.sh
-      - ./config/start.sh:/start.sh
+      - ./build/zerotier/connect2anycast.sh:/connect2anycast.sh
+      - ./build/zerotier/start.sh:/start.sh
       - ./data/zerotier:/var/lib/zerotier-one
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
     environment:
@@ -25,8 +25,9 @@ services:
     build: ./build/bird/
     restart: unless-stopped
     volumes:
-      - ./config/launchbird.sh:/launchbird.sh
-      - ./data/zerotier:/var/lib/zerotier-one
+      - ./build/bird/launchbird.sh:/launchbird.sh
+      - ./config/bird-template.conf:/etc/bird/bird-template.conf
+      - ./config/bird6-template.conf:/etc/bird/bird6-template.conf
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
     environment:
       - username=${username}

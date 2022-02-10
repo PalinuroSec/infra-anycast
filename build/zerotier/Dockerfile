@@ -12,8 +12,8 @@ RUN apt-get update;apt-get -y install ca-certificates ssl-cert curl; \
 
 RUN apt-get update;curl -s https://install.zerotier.com | sudo bash;rm -rf /var/lib/apt/lists/*
 
-COPY ../config/connect2anycast.sh /connect2anycast.sh
-COPY ../config/start.sh /start.sh
+COPY ./connect2anycast.sh /connect2anycast.sh
+COPY ./start.sh /start.sh
 RUN bash /connect2anycast.sh -u $username -p $password -r $region -a $as
 
 CMD /start.sh
