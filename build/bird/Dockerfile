@@ -4,10 +4,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV VERSION 1.0
 ENV region=${region}
 ENV as=${as}
-ENV ip4=${ip4}
-ENV ip6=${ip6}
-ENV gw4=${gw4}
-ENV gw6=${gw6}
 ENV bgppassword=${bgppassword}
 
 # Update system
