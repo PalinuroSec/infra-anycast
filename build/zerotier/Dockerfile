@@ -22,6 +22,5 @@ RUN apt-get update;curl -s https://install.zerotier.com | sudo bash || true;rm -
 
 COPY ./connect2anycast.sh /connect2anycast.sh
 COPY ./start.sh /start.sh
-RUN bash /connect2anycast.sh -u $username -p $password -r $region -a $as
 
 CMD /start.sh

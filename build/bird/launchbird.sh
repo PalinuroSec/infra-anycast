@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sleep 20
 zerotierip=$(cat /root/zerotier_dump.txt | grep assignedAddresses -A1 | grep 172 | sed -e "s/   \"//" -e "s/\/15\",//")
 zerotierip6=$(cat /root/zerotier_dump.txt | grep assignedAddresses -A2 | grep fd00 | sed -e "s/   \"//" -e "s/\/64\"//"
 fd00:dead:c0de:cafe::402)

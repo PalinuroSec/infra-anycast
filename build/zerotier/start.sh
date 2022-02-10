@@ -21,6 +21,11 @@ fi
 
 /etc/init.d/zerotier-one start
 
+bash /connect2anycast.sh -u $username -p $password -r $region -a $as
+
+zerotier-cli dump
+
+
 for ip in ${ip4[@]}; do
  ip -4 addr add dev $dn $ip
  ip -4 rule add from $ip table anycast
