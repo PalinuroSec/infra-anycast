@@ -15,7 +15,7 @@ ENV gw6=${gw6}
 RUN apt-get update;apt-get -y dist-upgrade; rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
-RUN apt-get update;apt-get -y install ca-certificates ssl-cert curl; \
+RUN apt-get update;apt-get -y install ca-certificates ssl-cert curl sudo; \
 	rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update;curl -s https://install.zerotier.com | sudo bash;rm -rf /var/lib/apt/lists/*
