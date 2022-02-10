@@ -46,5 +46,6 @@ services:
       - gw4=${gw4}
       - gw6=${gw6}
       - bgppassword=${bgppassword}
+      - neighbouras=${neighbouras}
     network_mode: host
     privileged: true
