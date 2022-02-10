@@ -9,6 +9,11 @@ services:
       - ./build/zerotier/start.sh:/start.sh
       - ./data/zerotier:/var/lib/zerotier-one
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
+    devices:
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
     environment:
       - username=${username}
       - apikey=${apikey}
