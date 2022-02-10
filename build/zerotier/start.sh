@@ -20,12 +20,12 @@ if [ "" == "`cat /etc/iproute2/rt_tables | grep anycast`" ]; then
 fi
 
 /etc/init.d/zerotier-one start
-
+sleep 4
 bash /connect2anycast.sh -u $username -p $apikey -a $as -r$region
-
+sleep 4
 zerotier-cli dump
 
-
+echo adding ipv4 routes
 for ip in ${ip4[@]}; do
  ip -4 addr add dev $dn $ip
  ip -4 rule add from $ip table anycast
@@ -33,6 +33,7 @@ done
 
 ip -4 route add default via $gw4 table anycast
 
+echo edding ipv6 routes
 for ip in ${ip6[@]}; do
  ip -6 addr add dev $dn $ip
  ip -6 rule add from $ip table anycast
