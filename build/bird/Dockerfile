@@ -17,6 +17,4 @@ RUN apt-get update;apt-get -y dist-upgrade; rm -rf /var/lib/apt/lists/*
 RUN apt-get update;apt-get -y install bird bird-bgp; \
 	rm -rf /var/lib/apt/lists/*
 
-COPY ./build/launchbird.sh /launchbird.sh
-
-CMD /launchbird.sh
+CMD /start.sh

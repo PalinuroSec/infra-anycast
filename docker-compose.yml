@@ -25,7 +25,7 @@ services:
     build: ./build/bird/
     restart: unless-stopped
     volumes:
-      - ./build/bird/launchbird.sh:/launchbird.sh
+      - ./build/bird/start.sh:/start.sh
       - ./config/bird-template.conf:/etc/bird/bird-template.conf
       - ./config/bird6-template.conf:/etc/bird/bird6-template.conf
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
