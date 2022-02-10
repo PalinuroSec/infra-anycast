@@ -14,7 +14,7 @@ sed -e "s/BGPPASSWORD/$bgppassword/g" > /etc/bird/bird.conf
 cat /etc/bird/bird6-template.conf |
 sed -e "s/ZEROTIERIP6/$zerotierip6/g" |
 sed -e "s/ZEROTIERIP/$zerotierip/g" |
-sed -e "s/NEIGHBOURIP6/$gw4/g" |
+sed -e "s/NEIGHBOURIP6/$gw6/g" |
 sed -e "s/ASNUM/$as/g" |
 sed -e "s/NEIGHBOURAS/$neighbouras/g" |
 sed -e "s/BGPPASSWORD/$bgppassword/g" > /etc/bird/bird6.conf
