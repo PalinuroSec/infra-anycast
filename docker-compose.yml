@@ -8,7 +8,7 @@ services:
       - ./build/zerotier/connect2anycast.sh:/connect2anycast.sh
       - ./build/zerotier/start.sh:/start.sh
       - ./data/zerotier:/var/lib/zerotier-one
-      - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
+      - ./data/zerotier-dump.txt:/zerotier_dump.txt
     devices:
       - /dev/net/tun
     cap_add:
@@ -35,7 +35,7 @@ services:
       - ./build/bird/start.sh:/start.sh
       - ./config/bird-template.conf:/etc/bird/bird-template.conf
       - ./config/bird6-template.conf:/etc/bird/bird6-template.conf
-      - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
+      - ./data/zerotier-dump.txt:/zerotier_dump.txt
     environment:
       - region=${region}
       - as=${as}
