@@ -1,0 +1,42 @@
+version: "3"
+services:
+  zerotier:
+    container_name: zerotier
+    build: ./build/zerotier/
+    restart: unless-stopped
+    volumes:
+      - ./config/connect2anycast.sh:/connect2anycast.sh
+      - ./config/start.sh:/start.sh
+      - ./data/zerotier:/var/lib/zerotier-one
+      - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
+    environment:
+      - username=${username}
+      - password=${passowrd}
+      - region=${region}
+      - as=${as}
+      - ip4=${ip4}
+      - ip6=${ip6}
+      - gw4=${gw4}
+      - gw6=${gw6}
+    network_mode: host
+    privileged: true
+  bird:
+    container_name: bird
+    build: ./build/bird/
+    restart: unless-stopped
+    volumes:
+      - ./config/launchbird.sh:/launchbird.sh
+      - ./data/zerotier:/var/lib/zerotier-one
+      - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
+    environment:
+      - username=${username}
+      - password=${passowrd}
+      - region=${region}
+      - as=${as}
+      - ip4=${ip4}
+      - ip6=${ip6}
+      - gw4=${gw4}
+      - gw6=${gw6}
+      - bgppassword=${bgppassword}
+    network_mode: host
+    privileged: true
