@@ -3,7 +3,7 @@ MAINTAINER Lorenzo "Palinuro" Faletra (palinuro@linux.it)
 ENV DEBIAN_FRONTEND noninteractive
 ENV VERSION 1.0
 ENV username=${username}
-ENV password=${passowrd}
+ENV apikey=${apikey}
 ENV region=${region}
 ENV as=${as}
 ENV ip4=${ip4}

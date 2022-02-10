@@ -11,7 +11,7 @@ services:
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
     environment:
       - username=${username}
-      - password=${passowrd}
+      - apikey=${passowrd}
       - region=${region}
       - as=${as}
       - ip4=${ip4}
@@ -30,8 +30,6 @@ services:
       - ./config/bird6-template.conf:/etc/bird/bird6-template.conf
       - ./data/zerotier-dump.txt:/root/zerotier_dump.txt
     environment:
-      - username=${username}
-      - password=${passowrd}
       - region=${region}
       - as=${as}
       - ip4=${ip4}

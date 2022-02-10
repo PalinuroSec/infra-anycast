@@ -21,7 +21,7 @@ fi
 
 /etc/init.d/zerotier-one start
 
-bash /connect2anycast.sh -u $username -p $password -a $as -r$region
+bash /connect2anycast.sh -u $username -p $apikey -a $as -r$region
 
 zerotier-cli dump
 
