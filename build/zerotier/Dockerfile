@@ -10,7 +10,7 @@ RUN apt-get update;apt-get -y dist-upgrade; rm -rf /var/lib/apt/lists/*
 RUN apt-get update;apt-get -y install ca-certificates ssl-cert curl; \
 	rm -rf /var/lib/apt/lists/*
 
-RUN apt-gt update;curl -s https://install.zerotier.com | sudo bash;rm -rf /var/lib/apt/lists/*
+RUN apt-get update;curl -s https://install.zerotier.com | sudo bash;rm -rf /var/lib/apt/lists/*
 
 COPY ../config/connect2anycast.sh /connect2anycast.sh
 COPY ../config/start.sh /start.sh
