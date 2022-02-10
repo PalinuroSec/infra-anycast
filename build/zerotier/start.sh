@@ -40,3 +40,5 @@ for ip in ${ip6[@]}; do
 done
 
 ip -6 route add default via $gw6 table anycast
+
+tail -f /var/lib/zerotier-one/zerotier-one.pid
