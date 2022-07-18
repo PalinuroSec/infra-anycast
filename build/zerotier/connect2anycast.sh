@@ -58,5 +58,3 @@ else
  echo "ERROR: unable to add node $anycast_zerotier to $anycast_network ($anycast_region)"
  exit 1
 fi
-
-zerotier-cli dump
