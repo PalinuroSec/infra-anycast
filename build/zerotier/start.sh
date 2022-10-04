@@ -1,3 +1,4 @@
+#!/bin/bash
 ip4=($ip41 $ip42)
 ip6=($ip61 $ip62)
 gw4=${gw4}
