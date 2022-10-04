@@ -21,7 +21,7 @@ fi
 
 /etc/init.d/zerotier-one start
 sleep 4
-bash /connect2anycast.sh -u $username -p $apikey -a $as -r$region
+bash /connect2anycast.sh -u $username -p $apikey -a $as -r$region || true
 sleep 4
 zerotier-cli dump
 

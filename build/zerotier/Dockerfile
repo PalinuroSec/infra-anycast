@@ -1,4 +1,4 @@
-FROM docker.io/parrotsec/core:5.0
+FROM parrot.run/core:5
 MAINTAINER Lorenzo "Palinuro" Faletra (palinuro@linux.it)
 ENV DEBIAN_FRONTEND noninteractive
 ENV VERSION 1.0
@@ -24,3 +24,4 @@ COPY ./connect2anycast.sh /connect2anycast.sh
 COPY ./start.sh /start.sh
 
 CMD /start.sh
+ENTRYPOINT /start.sh
